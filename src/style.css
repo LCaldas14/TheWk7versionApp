@@ -45,8 +45,8 @@ li:first-letter {
 .weather-temperature img {
   margin-right: 10px;
   float: left;
-  height: 64px;
-  width: 64px;
+  height: 180px;
+  width: 180px;
 }
 
 .weather-temperature strong {
@@ -62,4 +62,10 @@ li:first-letter {
 
 .weather-app .active:hover {
   text-decoration: none;
+}
+
+.icon:hover {
+  color: #635d9a;
+  font-size: 70px;
+  transition: all 150ms ease-in-out;
 }
