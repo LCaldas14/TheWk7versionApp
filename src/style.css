@@ -54,3 +54,12 @@ li:first-letter {
   font-size: 64px;
   line-height: 1;
 }
+
+.weather-app .active {
+  color: black;
+  cursor: default;
+}
+
+.weather-app .active:hover {
+  text-decoration: none;
+}
