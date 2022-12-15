@@ -11,6 +11,39 @@ function formatTime(timestamp) {
   return `${hours}:${minutes}`;
 }
 
+function dateMonthDay(timestamp) {
+  let h1 = document.querySelector("#date-month-day");
+  let date = now.getDate();
+  let month = months[now.getMonth()];
+  let day = days[now.getDay()];
+
+  let days = [
+    "SUNDAY",
+    "MONDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+    "THURSDAY",
+    "FRIDAY",
+    "SATURDAY",
+  ];
+  let months = [
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC",
+  ];
+
+  h1.innerHTML = `${date} ${month}, ${day}`;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -22,9 +55,9 @@ function displayTemperature(response) {
   let timeElement = document.querySelector("#time");
   let iconElement = document.querySelector("#icon");
 
-  celciusTemp = response.data.temperature.current;
+  celsiusTemp = response.data.temperature.current;
 
-  temperatureElement.innerHTML = Math.round(celciusTemp);
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   cityElement.innerHTML = response.data.city;
   countryElement.innerHTML = response.data.country;
   descriptionElement.innerHTML = response.data.condition.description;
@@ -57,7 +90,7 @@ function handleSubmit(event) {
 function displayCTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celciusTemp);
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   celsiusLink.classList.add("active");
   farenheitLink.classList.remove("active");
 }
