@@ -11,11 +11,12 @@ function formatTime(timestamp) {
   return `${hours}:${minutes}`;
 }
 
-function dateMonthDay(timestamp) {
-  let h1 = document.querySelector("#date-month-day");
-  let date = now.getDate();
-  let month = months[now.getMonth()];
-  let day = days[now.getDay()];
+function dateFormat(timestamp) {
+  let date = new Date(timestamp);
+  let h1 = document.querySelector("#dateElement");
+  let calendarDate = getDate();
+  let month = months[date.getMonth()];
+  let day = days[date.getDay()];
 
   let days = [
     "SUNDAY",
@@ -41,7 +42,7 @@ function dateMonthDay(timestamp) {
     "DEC",
   ];
 
-  h1.innerHTML = `${date} ${month}, ${day}`;
+  h1.innerHTML = `${calendarDate} ${month}, ${day}`;
 }
 
 function displayTemperature(response) {

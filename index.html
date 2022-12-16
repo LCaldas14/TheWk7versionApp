@@ -22,7 +22,7 @@
 
     <div class="container">
                  <h1>
-        <span id = "date-month-day"> hello
+        <span id = "dateElement"> hello
 
         </span>
       </h1>
@@ -50,10 +50,11 @@
       <small id = "country"></small>
       <span id = "date"></span>
       <ul>
-        <li>Last updated: <span id="time"></span></li>
-        <li id="description"></li>
-        <li>Feels like:</li>
+        <li>Last updated: <span id="time"></span> GMT</li>
+         <li>Feels like:</li>
         <li> <span id="feelsLike"></span>°C</li>
+        <li id="description"></li>
+       
       </ul>
       </div>
       <div class="row">
@@ -63,8 +64,11 @@
       <div>
         <strong id="temperature"></strong>
         <span class="units">
-          <a href="#" id="celsius-link" class="active">°C</a> | 
-          <a href="#" id="farenheit-link">°F</a></span>
+          <button class="button-1" role="button">
+          <a href="#" id="celsius-link" class="active">°C</a> </button>
+          
+         <button class="button-1" role="button">
+          <a href="#" id="farenheit-link">°F</a></span></button>
          
           </div>
 </div>
