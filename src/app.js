@@ -1,3 +1,38 @@
+let now = new Date();
+let date = now.getDate();
+if (date < 10) {
+  date = `0${date}`;
+}
+let year = now.getFullYear();
+let days = [
+  "SUNDAY",
+  "MONDAY",
+  "TUESDAY",
+  "WEDNESDAY",
+  "THURSDAY",
+  "FRIDAY",
+  "SATURDAY",
+];
+let day = days[now.getDay()];
+let months = [
+  "JAN",
+  "FEB",
+  "MAR",
+  "APR",
+  "MAY",
+  "JUN",
+  "JUL",
+  "AUG",
+  "SEP",
+  "OCT",
+  "NOV",
+  "DEC",
+];
+let month = months[now.getMonth()];
+
+let h1 = document.querySelector("h1");
+h1.innerHTML = ` ${day} ${date} , ${month} ${year}`;
+
 function formatTime(timestamp) {
   let time = new Date(timestamp);
   let hours = time.getHours();
@@ -9,40 +44,6 @@ function formatTime(timestamp) {
     minutes = `0${minutes}`;
   }
   return `${hours}:${minutes}`;
-}
-
-function dateFormat(timestamp) {
-  let date = new Date(timestamp);
-  let h1 = document.querySelector("#dateElement");
-  let calendarDate = getDate();
-  let month = months[date.getMonth()];
-  let day = days[date.getDay()];
-
-  let days = [
-    "SUNDAY",
-    "MONDAY",
-    "TUESDAY",
-    "WEDNESDAY",
-    "THURSDAY",
-    "FRIDAY",
-    "SATURDAY",
-  ];
-  let months = [
-    "JAN",
-    "FEB",
-    "MAR",
-    "APR",
-    "MAY",
-    "JUN",
-    "JUL",
-    "AUG",
-    "SEP",
-    "OCT",
-    "NOV",
-    "DEC",
-  ];
-
-  h1.innerHTML = `${calendarDate} ${month}, ${day}`;
 }
 
 function displayTemperature(response) {
