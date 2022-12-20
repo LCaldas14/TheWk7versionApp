@@ -159,14 +159,15 @@ li:first-letter {
 
 .current {
   position: relative;
-  color: black;
-  background-color: white;
+
+  color: white;
   border-radius: 60px;
   padding: 80px 80px;
-  left: 250px;
   max-width: 400px;
-  max-height: 300px;
+  max-height: 100px;
   margin: 0;
+  border: #ea4c89;
+  border-width: 100px;
 }
 
 p {
@@ -174,6 +175,26 @@ p {
   text-transform: capitalize;
 }
 
-.state {
-  left: 500px;
+.d-flex {
+  position: relative;
+  top: -80px;
+  margin: 0 auto;
+}
+
+.weather-image {
+  position: relative;
+  top: -20px;
+  left: -10px;
+}
+
+.units {
+  position: relative;
+  top: 5px;
+  left: -30px;
+}
+
+.metrics {
+  position: relative;
+  top: -210px;
+  left: 390px;
 }
