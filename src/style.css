@@ -1,8 +1,9 @@
 h1 {
-  margin: 0;
-  left: 500px;
-  top: 60px;
-  position: fixed;
+  display: block;
+  margin: 0 auto;
+  top: 5px;
+  position: relative;
+  max-width: 500px;
   padding: 10px;
   text-align: center;
   background-color: white;
@@ -80,12 +81,19 @@ li:first-letter {
 .weather-app .active:hover {
   text-decoration: none;
 }
+.location {
+  max-width: 200px;
+  padding: 15px;
+  margin: 10px;
+}
 
 .search-bar {
   position: relative;
-  display: block;
-  margin-top: 80px;
-  padding: 20px;
+  display: inline;
+  margin: 0 auto;
+  top: 50px;
+  padding: 0px;
+  max-width: fit-content;
 }
 
 .btn-primary {
@@ -149,8 +157,23 @@ li:first-letter {
   transition: all 150ms ease-in-out;
 }
 
-.metrics {
+.current {
   position: relative;
-  display: block;
-  padding: 15px;
+  color: black;
+  background-color: white;
+  border-radius: 60px;
+  padding: 80px 80px;
+  left: 250px;
+  max-width: 400px;
+  max-height: 300px;
+  margin: 0;
+}
+
+p {
+  color: #ea4c89;
+  text-transform: capitalize;
+}
+
+.state {
+  left: 500px;
 }
