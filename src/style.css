@@ -188,6 +188,7 @@ li:first-letter {
   position: relative;
   top: 5px;
   left: -30px;
+  font-size: 68px;
 }
 
 .metrics {
