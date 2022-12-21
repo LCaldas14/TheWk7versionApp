@@ -46,7 +46,7 @@ function formatTime(timestamp) {
   return `${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -65,6 +65,13 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "333f557et08fd3a7702f775fo4452b95";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -75,8 +82,6 @@ function displayTemperature(response) {
   let windSpeedElement = document.querySelector("#windSpeed");
   let timeElement = document.querySelector("#time");
   let iconElement = document.querySelector("#icon");
-
-  displayForecast();
 
   celsiusTemp = response.data.temperature.current;
 
@@ -98,6 +103,8 @@ function displayTemperature(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
+
+  getForecast(response.data.coordinates);
 }
 
 function search(city) {
