@@ -46,6 +46,25 @@ function formatTime(timestamp) {
   return `${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+           ${day}
+        <img src="images/rainy.svg" alt="" width="60px"> 
+        <span class="forecast-temp-max"> 19 </span> 
+        <span class="forecast-temp-min"> 11 </span> 
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -56,6 +75,8 @@ function displayTemperature(response) {
   let windSpeedElement = document.querySelector("#windSpeed");
   let timeElement = document.querySelector("#time");
   let iconElement = document.querySelector("#icon");
+
+  displayForecast();
 
   celsiusTemp = response.data.temperature.current;
 
