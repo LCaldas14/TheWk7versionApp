@@ -24,7 +24,10 @@ h2 {
   margin-bottom: 0;
   max-width: 300px;
 }
-
+p {
+  color: #ea4c89;
+  text-transform: capitalize;
+}
 ul {
   padding: 0;
   margin: 0;
@@ -36,6 +39,9 @@ li {
   font-size: 16px;
   line-height: 19px;
   font-weight: 100;
+}
+li:first-letter {
+  text-transform: capitalize;
 }
 .weather-app-wrapper {
   display: block;
@@ -50,10 +56,7 @@ li {
   background-color: black;
   border: 10px solid;
   border-radius: 30px;
-}
-
-li:first-letter {
-  text-transform: capitalize;
+  max-height: 800px;
 }
 
 .overview {
@@ -170,11 +173,6 @@ li:first-letter {
   border-width: 100px;
 }
 
-p {
-  color: #ea4c89;
-  text-transform: capitalize;
-}
-
 .d-flex {
   position: relative;
   top: -80px;
@@ -184,7 +182,6 @@ p {
 .weather-image {
   position: relative;
   top: -20px;
-  left: -10px;
 }
 
 .units {
@@ -197,4 +194,26 @@ p {
   position: relative;
   top: -210px;
   left: 390px;
+}
+
+.forecast {
+  position: relative;
+  top: -235px;
+  text-align: center;
+}
+.nextdays {
+  font-size: 30px;
+  text-transform: capitalize;
+  position: relative;
+  left: -200px;
+}
+
+.text-center {
+  position: relative;
+  top: 30px;
+  padding-bottom: 55px;
+}
+
+.forecast-temp-min {
+  opacity: 0.6;
 }
